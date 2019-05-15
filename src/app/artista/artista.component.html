@@ -1,0 +1,112 @@
+<div id="cuerpo">
+
+  <header>
+
+    <div id="foto">
+
+      <img src="../assets/myley.jpg" alt="Foto de un saxofon" title="foto de un saxofon">
+
+    </div>
+
+    <!--nombre-->
+    <div id="nombre">
+
+
+      <div *ngFor="let artist of artists" id={{artist.nombre}}>
+        {{artist.nombre}}
+        <br>
+
+        {{artist.genero}}
+
+      </div>
+    </div>
+
+
+
+
+
+  </header>
+
+  <div id="contenido">
+    <div id="selectores">
+      <!--Biografia-->
+      <div class="desplegable" id="desplegableBiografia">
+        <div id="biografia" class="activador" (click)="activarBiografia()">
+          Biografia
+        </div>
+        <div id="listabiografia" class="lista biografica">
+
+          <div *ngFor="let artist of artists">
+            <p>{{artist.biografia}}</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!--Genero
+      <div class="desplegable">
+        <div id="genero" class="activador" (click)="activarGenero()">
+          Genero
+        </div>
+        <div id="listagenero" class="lista">
+
+
+          <div id="pop" class="item">
+            Pop
+          </div>
+
+
+        </div>
+      </div>
+      -->
+
+      <!--Canciones-->
+      <div class="desplegable">
+        <div id="canciones" class="activador" (click)="activarCancion()">
+          Canciones
+        </div>
+        <div id="listaCanciones" class="lista">
+          <!----
+          <div *ngFor="let key of canart" id={{key.titulo}} class=item [routerLink]="['/artista']" [queryParams]="{ id: artist.id }">
+            {{key.titulo}}
+         </div>
+         -->
+
+          <div *ngFor="let key of canart" id={{key.titulo}} class=item>
+            <p>{{key.titulo}}</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!--Albums-->
+      <div class="desplegable">
+
+
+        <div id="Albumes" class="activador" (click)="activarAlbum()">
+          Albums
+        </div>
+        <div id="listaAlbums" class="lista">
+
+          <div *ngFor="let key of albart" id={{key.nombre_album}} class=item>
+            <p>{{key.nombre_album}}</p>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+    <div id="boton">
+
+      <a class="boton_personalizado" (click)="goBack()">Atras</a>
+
+
+    </div>
+
+  </div>
+
+
+
+
+</div>

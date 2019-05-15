@@ -1,0 +1,34 @@
+<header>
+
+  <div id=logo >
+
+      <img src="../assets/logo-01.png"
+          alt="logo de la empresa simbolizando al numero 4 de la saga de libros lorien legacys" title="Logo" [routerLink]="['/main']">
+
+  </div>
+  <div id=nombre>
+
+      Lorien Music
+
+  </div>
+  <div id=busqueda>
+
+      <i id="lupa" class="fas fa-search"></i>
+
+      <form>
+          <input id="textbar" type="text" placeholder="Buscar" required minlength="4" maxlength="8" size="60">
+      </form>
+
+      <i id="down" class="fas fa-sort-down"></i>
+
+
+  </div>
+
+</header>
+
+<div id="container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer>
+</footer>
