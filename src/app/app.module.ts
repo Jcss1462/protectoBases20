@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import{ArtistasService} from './services/api';
 import{CancionesartistaService} from './services/api';
 import{AlbumesartistaService} from './services/api';
+import { AlbumesComponent } from './albumes/albumes.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import{AlbumesartistaService} from './services/api';
     ArtistaComponent,
     CancionComponent,
     GeneroComponent,
-    MainPageComponent
+    MainPageComponent,
+    AlbumesComponent
   ],
   imports: [
     BrowserModule,

@@ -9,17 +9,17 @@
           </div>
           <div id="listagenero" class="lista">
 
-              <div id="jaz" class="item">
+              <div id="jaz" class="item"class=item [routerLink]="['/genero']" [queryParams]="{ genero: 'jazz'  }">
                   Jazz
               </div>
-              <div id="pop" class="item">
+              <div id="pop" class="item" [routerLink]="['/genero']" [queryParams]="{ genero: 'pop'  }">
                   Pop
               </div>
-              <div id="rock" class="item">
+              <div id="rock" class="item"[routerLink]="['/genero']" [queryParams]="{ genero: 'rock'  }">
                   Rock
               </div>
-              <div id="electronica" class="item">
-                  Electronica
+              <div id="electronica" class="item"[routerLink]="['/genero']" [queryParams]="{ genero: 'swing' }">
+                  Swing
               </div>
           </div>
       </div>
@@ -39,40 +39,9 @@
           </div>
       </div>
 
-      <!--Foto-->
-      <div class="desplegable">
-          <div id="foto" class="activador" (click)="activarFoto()">
-              Foto
-          </div>
-          <div id="listafoto" class="lista foto">
-
-              <div id="Myley Cyrus" class="item">
-                  <img src="../assets/myley.jpg" alt="Foto de Myley cyrus" title="foto artista">
-              </div>
-
-              <div id="Lady Gaga" class="item">
-                  <img src="../assets/lady.jpeg" alt="Foto de Lady Gaga" title="foto artista">
-              </div>
-
-          </div>
-      </div>
-
-
-
-
-
 
   </div>
 
-  <div id="ir">
-
-      <a class="boton_personalizado" [routerLink]="['/genero']">genero</a>
-      <a class="boton_personalizado" [routerLink]="['/artista']">artista</a>
-      <a class="boton_personalizado" [routerLink]="['/cancion']">cancion</a>
-
-      
-  </div>
-
-
+ 
 
 </div>

@@ -29,4 +29,15 @@ export class ArtistasService {
       return this.http.get<Artist[]>(this.resourceURL + "?id=" + id);
     }
   }
+
+  getArtistsBygenero(req: any): Observable<Artist[]> {
+    //get Artists from api server
+    
+    if (req.genero == null) {
+      return this.http.get<Artist[]>(this.resourceURL);
+
+    } else {
+      return this.http.get<Artist[]>(this.resourceURL + "?genero=" + req.genero);
+    }
+  }
 }

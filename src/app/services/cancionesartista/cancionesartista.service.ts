@@ -28,4 +28,18 @@ export class CancionesartistaService {
       return this.http.get<Canart[]>(this.resourceURL + "?artid=" + id);
     }
   }
+
+  getCanArtistsBygenero(req: any): Observable<Canart[]> {
+    //get Artists from api server
+
+   
+    
+    if (req.genero == null) {
+      return this.http.get<Canart[]>(this.resourceURL);
+      
+    } else {
+      console.log(req);
+      return this.http.get<Canart[]>(this.resourceURL + "?genero=" + req.genero);
+    }
+  }
 }

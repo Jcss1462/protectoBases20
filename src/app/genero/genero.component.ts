@@ -3,6 +3,21 @@ import { Component, OnInit } from '@angular/core';
 //importacion par obtener la ultima pagina visitada
 import { Location } from '@angular/common';
 
+
+//importo para obtener el parametro en la url
+import { Router } from '@angular/router';
+
+
+
+
+//servicios
+import { Artist } from '../services/api';
+import { ArtistasService } from '../services/api';
+
+import { Canart } from '../services/api';
+import { CancionesartistaService } from '../services/api';
+
+
 @Component({
   selector: 'app-genero',
   templateUrl: './genero.component.html',
@@ -10,28 +25,61 @@ import { Location } from '@angular/common';
 })
 export class GeneroComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  private genero: string;
+
+  canart: Canart[];
+  artists: Artist[];
+
+  req: any = {
+    genero: null,
+    id: null
+  };
+
+  //condicionales
+  pop: boolean = false;
+  rock: boolean = false;
+  jazz: boolean = false;
+  swing: boolean = false;
+
+  constructor(private location: Location, private router: Router, private _Artistas: ArtistasService, private _Canartist: CancionesartistaService) {
+
+    //sacar el parametro id y meterlo en un variable
+    this.req.genero = this.router.parseUrl(this.router.url).queryParams.genero;
+
+    if (this.req.genero == "pop") {
+      this.pop = true;
+    } else if (this.req.genero == "rock") {
+      this.rock = true;
+    } else if (this.req.genero == "jazz") {
+      this.jazz = true;
+    } else if (this.req.genero == "swing") {
+      this.swing = true;
+    }
+
+  }
+
 
   ngOnInit() {
+    this._Artistas.getArtistsBygenero(this.req)
+      .subscribe(artists => this.artists = artists);
+
+
+    this._Canartist.getCanArtistsBygenero(this.req)
+      .subscribe(artists => this.canart = artists);
   }
 
-  //activar biografia
-  activarBiografia(): void {
-    let activador= document.getElementById("listabiografia");
-    activador.classList.toggle('active');
-  }
 
-  
+
   //activar lista de artista
   activarArtista(): void {
-    let activador= document.getElementById("listaArista");
+    let activador = document.getElementById("listaArista");
     activador.classList.toggle('active');
   }
 
-  
+
   //activar lista de canciones
   activarCancion(): void {
-    let activador= document.getElementById("listaCanciones");
+    let activador = document.getElementById("listaCanciones");
     activador.classList.toggle('active');
   }
 
