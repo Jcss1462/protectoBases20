@@ -1,4 +1,4 @@
 export class Canart {
-    canid: string;
+    cancion_id: string;
     titulo: string;
 }

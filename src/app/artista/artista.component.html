@@ -43,22 +43,7 @@
         </div>
       </div>
 
-      <!--Genero
-      <div class="desplegable">
-        <div id="genero" class="activador" (click)="activarGenero()">
-          Genero
-        </div>
-        <div id="listagenero" class="lista">
 
-
-          <div id="pop" class="item">
-            Pop
-          </div>
-
-
-        </div>
-      </div>
-      -->
 
       <!--Canciones-->
       <div class="desplegable">
@@ -66,13 +51,8 @@
           Canciones
         </div>
         <div id="listaCanciones" class="lista">
-          <!----
-          <div *ngFor="let key of canart" id={{key.titulo}} class=item [routerLink]="['/artista']" [queryParams]="{ id: artist.id }">
-            {{key.titulo}}
-         </div>
-         -->
 
-          <div *ngFor="let key of canart" id={{key.titulo}} class=item>
+          <div *ngFor="let key of canart" id={{key.titulo}} class=item [routerLink]="['/cancion']" [queryParams]="{ id: key.cancion_id }">
             <p>{{key.titulo}}</p>
           </div>
 

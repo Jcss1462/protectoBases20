@@ -7,7 +7,7 @@ import { ArtistaComponent } from './artista/artista.component';
 import { CancionComponent } from './cancion/cancion.component';
 import { GeneroComponent } from './genero/genero.component';
 import { MainPageComponent } from './main-page/main-page.component';
-
+import { AlbumesComponent } from './albumes/albumes.component';
 //http
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 import{ArtistasService} from './services/api';
 import{CancionesartistaService} from './services/api';
 import{AlbumesartistaService} from './services/api';
-import { AlbumesComponent } from './albumes/albumes.component';
+import{CancionesService} from './services/api';
+
+
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { AlbumesComponent } from './albumes/albumes.component';
   providers: [
     ArtistasService,
     CancionesartistaService,
-    AlbumesartistaService
+    AlbumesartistaService,
+    CancionesService
   ],
   bootstrap: [AppComponent]
 })

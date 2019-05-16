@@ -4,24 +4,46 @@
 
     <div id="foto">
 
-      <img src="../assets/theclimb.jpg" alt="Foto de un saxofon" title="foto de un saxofon">
+      <img src="../assets/myley.jpg" alt="Foto de un saxofon" title="foto de un saxofon">
 
     </div>
 
+    <!--nombre-->
     <div id="nombre">
-      The climb
+
+      <div *ngFor="let key of canci" id={{key.titulo}}>
+        {{key.titulo}}
+      </div>
+
     </div>
 
 
   </header>
 
   <div id="contenido">
-    <div id="selectores">
-      
+    <div id="opciones">
+      <div id="selectores">
+        <!--letra-->
+        <div class="desplegable" id="desplegableBiografia">
+          <div id="letra" class="activador" (click)="activarLetra()">
+            Letra
+          </div>
+          <div id="listaletra" class="lista biografica">
+
+            <div *ngFor="let key of canci">
+              <p>{{key.letra}}</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
     </div>
     <div id="boton">
 
       <a class="boton_personalizado" (click)="goBack()">Atras</a>
+
 
     </div>
 
