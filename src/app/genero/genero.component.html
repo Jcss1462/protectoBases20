@@ -75,7 +75,7 @@
         </div>
         <div id="listaCanciones" class="lista">
 
-          <div *ngFor="let key of canart" id="canart.id" class="item">
+          <div *ngFor="let key of canart" id="canart.id" class="item"[routerLink]="['/cancion']" [queryParams]="{ id: key.cancion_id }">
             {{key.titulo}}
           </div>
 

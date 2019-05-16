@@ -53,11 +53,12 @@ header{
 }
 
 #boton{
-  width: 40%;
+  width: 60%;
   height: 20%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 .boton_personalizado{
   text-decoration: none;
