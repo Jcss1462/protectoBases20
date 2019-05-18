@@ -1,10 +1,10 @@
 <div id="cuerpo">
 
-  <header>
+  <header *ngFor="let artist of artists">
 
     <div id="foto">
 
-      <img src="../assets/myley.jpg" alt="Foto de un saxofon" title="foto de un saxofon">
+      <img [src]="artist.portada | safeurl">
 
     </div>
 
@@ -12,7 +12,7 @@
     <div id="nombre">
 
 
-      <div *ngFor="let artist of artists" id={{artist.nombre}}>
+      <div id={{artist.nombre}}>
         {{artist.nombre}}
         <br>
 
@@ -52,7 +52,8 @@
         </div>
         <div id="listaCanciones" class="lista">
 
-          <div *ngFor="let key of canart" id={{key.titulo}} class=item [routerLink]="['/cancion']" [queryParams]="{ id: key.cancion_id }">
+          <div *ngFor="let key of canart" id={{key.titulo}} class=item [routerLink]="['/cancion']"
+            [queryParams]="{ id: key.cancion_id }">
             <p>{{key.titulo}}</p>
           </div>
 
@@ -76,12 +77,14 @@
         </div>
       </div>
 
+     
+
     </div>
     <div id="boton">
 
       <a class="boton_personalizado" (click)="goBack()">Atras</a>
 
-      
+
       <a class="boton_personalizado" (click)="goBack()">Ver fotos</a>
 
 

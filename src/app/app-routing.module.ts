@@ -7,6 +7,7 @@ import { MainPageComponent }   from './main-page/main-page.component';
 import { GeneroComponent }   from './genero/genero.component';
 import { ArtistaComponent }   from './artista/artista.component';
 import { CancionComponent }   from './cancion/cancion.component';
+import {AlbumesComponent} from './albumes/albumes.component';
 
 const routes: Routes = [
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'genero', component: GeneroComponent },
   { path: 'artista', component: ArtistaComponent },
   { path: 'cancion', component: CancionComponent },
+  { path: 'album', component: AlbumesComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: '**', redirectTo: '/main', pathMatch: 'full' }
 

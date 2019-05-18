@@ -43,7 +43,13 @@ export class ArtistaComponent implements OnInit {
     .subscribe(artists => this.canart = artists);
 
     this._Artistas.getArtists(this.id)
-    .subscribe(artists => this.artists = artists);
+    .subscribe((data)=>{
+      for(let idx=0;idx<data.length;idx++){
+
+        data[idx].portada=this.bufferToBase64(data[idx]["imagen_principal"]["imgBase64"]);
+      }
+      this.artists=data;
+    });
 
     this._Albart.getArtists(this.id)
     .subscribe(artists => this.albart = artists);
@@ -54,7 +60,7 @@ export class ArtistaComponent implements OnInit {
   activarBiografia(): void {
     let activador = document.getElementById("listabiografia");
     activador.classList.toggle('active');
-    console.log(this.albart);
+    console.log(this.artists);
   }
 
 
@@ -80,6 +86,11 @@ export class ArtistaComponent implements OnInit {
   //ir a la pagina anterior
   goBack(): void {
     this.location.back();
+  }
+
+  bufferToBase64(b64encoded){
+
+    return 'data:image/jpeg;base64,'+b64encoded;
   }
 
 }

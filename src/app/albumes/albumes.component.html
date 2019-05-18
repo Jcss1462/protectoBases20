@@ -1,3 +1,69 @@
-<p>
-  albumes works!
-</p>
+<div id="cuerpo">
+
+  <header>
+
+    <div id="foto">
+
+      <img src="../assets/myley.jpg" alt="Foto de un saxofon" title="foto de un saxofon">
+
+    </div>
+
+    <!--nombre-->
+    <div id="nombre">
+
+
+      <div *ngFor="let artist of artists" id={{artist.nombre}}>
+        {{artist.nombre}}
+        <br>
+
+        {{artist.genero}}
+
+      </div>
+    </div>
+
+
+
+
+
+  </header>
+
+  <div id="contenido">
+
+    <div id="listacan">
+      <div id="titulos">
+
+        <div id="albnum">
+          #
+        </div>
+        <div id="albfot">
+          Foto
+        </div>
+        <div id="albtitulo">
+          Titulo
+        </div>
+
+      </div>
+
+      <div id="elementos">
+
+        <div class="cancion">
+          <div id="num">
+            1
+          </div>
+          <div id="fot">
+            Foto
+          </div>
+          <div id="titulo">
+            We get
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div id="boton">
+      <a class="boton_personalizado" (click)="goBack()">Atras</a>
+    </div>
+  </div>
+
+</div>

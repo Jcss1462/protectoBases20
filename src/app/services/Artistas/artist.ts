@@ -3,4 +3,5 @@ export class Artist {
     nombre: string;
     genero: string;
     biografia: string;
+    portada: string;
 }

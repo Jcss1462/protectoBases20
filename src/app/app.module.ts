@@ -18,6 +18,8 @@ import{ArtistasService} from './services/api';
 import{CancionesartistaService} from './services/api';
 import{AlbumesartistaService} from './services/api';
 import{CancionesService} from './services/api';
+import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
+
 
 
 
@@ -29,7 +31,9 @@ import{CancionesService} from './services/api';
     CancionComponent,
     GeneroComponent,
     MainPageComponent,
-    AlbumesComponent
+    AlbumesComponent,
+    SafeurlPipe,
+    
   ],
   imports: [
     BrowserModule,
