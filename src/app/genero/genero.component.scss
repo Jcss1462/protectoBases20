@@ -9,159 +9,187 @@
   height: 84vh;
   display: inline-block;
   box-sizing: border-box;
-}
-
-header{
-  width: 100%;
-  height: 15%;
-  background: rgb(1, 71, 141);
-  display: flex;
-}
-
-#foto{
-  width: 10%;
-  min-width: 150px;
-  height: 100%;
-  border: 2px solid #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img{
+  header{
     width: 100%;
-    height: 100%;
-    min-height: 50%;
+    height: 15%;
+    background: rgb(1, 71, 141);
+    display: flex;
+    #foto{
+      width: 10%;
+      min-width: 150px;
+      height: 100%;
+      border: 2px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 100%;
+        height: 100%;
+        min-height: 50%;
+      }
+    }
+    
+    #nombre{
+      width: 20%;
+      min-width: 200px;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      margin-left: 10px;
+      margin-bottom: 100px;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: 50px;
+      letter-spacing: 0px;
+      word-spacing: 0.8px;
+      color: rgb(255, 255, 255);
+      font-weight: 700;
+      text-decoration: none;
+      font-style: normal;
+      font-variant: small-caps;
+      text-transform: capitalize;
+    }
   }
 }
 
-#nombre{
-  width: 20%;
-  min-width: 200px;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  margin-left: 10px;
-  margin-bottom: 100px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 50px;
-  letter-spacing: 0px;
-  word-spacing: 0.8px;
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  text-decoration: none;
-  font-style: normal;
-  font-variant: small-caps;
-  text-transform: capitalize;
-}
 
-#boton{
-  width: 40%;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.boton_personalizado{
-  text-decoration: none;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 20px;
-  color: #000000;
-  background-color: #00D9FF;
-  border-radius: 6px;
-  border: 2px solid #0078b0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  &:hover{
-    background-color: rgb(46, 163, 184);
-    cursor: pointer;
-  }
-}
+
+
+
+
 
 #contenido{
   width: 100%;
   height: 80%;
   display: inline-block;
-}
-
-/**************************Selector*********************************/
-
-#selectores{
-  width: 100%;
-  height: 80%;
-  display: flex;
-  overflow-x: auto;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-
-.desplegable{
-  display: inline-block;
-  width: 50%;
-  min-width: 200px;
-  height: 80%;
-  min-height: 300px;
-}
-
-.activador{
-  width: 100%;
-  height: 14%;
-  background: #00C9CC;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 30px;
-  letter-spacing: 0px;
-  word-spacing: 0.8px;
-  color: #000000;
-  font-weight: 700;
-  text-decoration: none;
-  font-style: normal;
-  &:hover{
-    cursor: pointer;
-    background: rgb(1, 102, 104);
+  img{
+    display:none;
   }
-}
-
-.lista{
-  width: 100%;
-  height: 0;
-  display: inline-block;
-  font-size: 0;
-  transition: all 0.2s ease;
-  &.active{
-    height: 86%;
-    background: gray;
-    overflow-y: auto;
-    font-size: 20px;
-  }
-  p{
-    display: none;
-  }
-  &.active p{
+  #selectores{
+    width: 100%;
+    height: 80%;
     display: flex;
+    overflow-x: auto;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    .desplegable{
+      display: inline-block;
+      width: 50%;
+      min-width: 200px;
+      height: 99%;
+      min-height: 300px;
+      .activador{
+        width: 100%;
+        height: 14%;
+        background: #00C9CC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        font-size: 30px;
+        letter-spacing: 0px;
+        word-spacing: 0.8px;
+        color: #000000;
+        font-weight: 700;
+        text-decoration: none;
+        font-style: normal;
+        &:hover{
+          cursor: pointer;
+          background: rgb(1, 102, 104);
+        }
+      }
+      .lista{
+        width: 100%;
+        height: 0;
+        display: inline-block;
+        font-size: 0;
+        transition: all 0.2s ease;
+
+        .item{
+          width: 100%;
+          height: 30%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          background: gray;
+
+          .foto{ 
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            img{
+                width:  100px;
+                height: 100px;
+                border: 2px solid #ffffff;
+            }
+          }
+  
+          .nombre{ 
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+          }
+
+          &:hover{
+            cursor: pointer;
+            background: rgb(73, 73, 73);
+          }
+        }
+
+        &.active{
+          height: 86%;
+          background: gray;
+          overflow-y: auto;
+          font-size: 20px;
+          img{
+            display:flex;
+          }
+        }
+        p{
+          display: none;
+        }
+        &.active p{
+          display: flex;
+        }
+      }
+    }
   }
+  #boton{
+    width: 40%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .boton_personalizado{
+      text-decoration: none;
+      padding: 10px;
+      font-weight: 600;
+      font-size: 20px;
+      color: #000000;
+      background-color: #00D9FF;
+      border-radius: 6px;
+      border: 2px solid #0078b0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      &:hover{
+        background-color: rgb(46, 163, 184);
+        cursor: pointer;
+      }
+    }
+  }
+  
 }
 
-.item{
-  width: 100%;
-  height: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background: gray;
-  &:hover{
-    cursor: pointer;
-    background: rgb(73, 73, 73);
-  }
-}
 
-#desplegableBiografia{
-  min-width: 350px;
-  width: 30%;
-}
+
+
+
+
+

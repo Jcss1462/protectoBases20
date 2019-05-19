@@ -1,17 +1,17 @@
 <div id="cuerpo">
 
-  <header>
+  <header *ngFor="let key of canci">
 
     <div id="foto">
 
-      <img src="../assets/myley.jpg" alt="Foto de un saxofon" title="foto de un saxofon">
+        <img [src]="key.portada_cancion | safeurl">
 
     </div>
 
     <!--nombre-->
     <div id="nombre">
 
-      <div *ngFor="let key of canci" id={{key.titulo}}>
+      <div  id={{key.titulo}}>
         {{key.titulo}}
       </div>
 
@@ -24,7 +24,7 @@
     <div id="opciones">
       <div id="selectores">
         <!--letra-->
-        <div class="desplegable" id="desplegableBiografia">
+        <div class="desplegable" id="desplegableLetra">
           <div id="letra" class="activador" (click)="activarLetra()">
             Letra
           </div>

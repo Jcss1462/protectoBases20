@@ -61,11 +61,23 @@ export class GeneroComponent implements OnInit {
 
   ngOnInit() {
     this._Artistas.getArtistsBygenero(this.req)
-      .subscribe(artists => this.artists = artists);
+    .subscribe((data)=>{
+      for(let idx=0;idx<data.length;idx++){
+
+        data[idx].portada=this.bufferToBase64(data[idx]["imagen_principal"]["imgBase64"]);
+      }
+      this.artists=data;
+    });
 
 
     this._Canartist.getCanArtistsBygenero(this.req)
-      .subscribe(artists => this.canart = artists);
+    .subscribe((data)=>{
+      for(let idx=0;idx<data.length;idx++){
+
+        data[idx].portada_cancion=this.bufferToBase64(data[idx]["imagen_cancion"]["imgBase64"]);
+      }
+      this.canart=data;
+    });
   }
 
 
@@ -86,6 +98,11 @@ export class GeneroComponent implements OnInit {
   //ir a la pagina anterior
   goBack(): void {
     this.location.back();
+  }
+
+  bufferToBase64(b64encoded){
+
+    return 'data:image/jpeg;base64,'+b64encoded;
   }
 
 }

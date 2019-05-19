@@ -62,8 +62,17 @@
 
           
           <div *ngFor="let artist of artists" id="artist.id" class="item" [routerLink]="['/artista']" [queryParams]="{ id: artist.id }">
-            {{artist.nombre}}
+            
+            <div class="foto">
+                <img [src]="artist.portada | safeurl">
+              </div>
+              <div class="nombre">
+                <p>{{artist.nombre}}</p>
+              </div>
+
           </div>
+
+
 
         </div>
       </div>
@@ -76,7 +85,13 @@
         <div id="listaCanciones" class="lista">
 
           <div *ngFor="let key of canart" id="canart.id" class="item"[routerLink]="['/cancion']" [queryParams]="{ id: key.cancion_id }">
-            {{key.titulo}}
+            <div class="foto">
+                <img [src]="key.portada_cancion | safeurl">
+              </div>
+              <div class="nombre">
+                <p>{{key.titulo}}</p>
+              </div>
+  
           </div>
 
         </div>

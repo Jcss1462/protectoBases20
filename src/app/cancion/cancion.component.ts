@@ -29,7 +29,13 @@ export class CancionComponent implements OnInit {
 
   ngOnInit() {
     this._cancion.getCancion(this.id)
-    .subscribe(artists => this.canci = artists);
+    .subscribe((data)=>{
+      for(let idx=0;idx<data.length;idx++){
+
+        data[idx].portada_cancion=this.bufferToBase64(data[idx]["imagen_cancion"]["imgBase64"]);
+      }
+      this.canci=data;
+    });
   }
 
   
@@ -42,6 +48,11 @@ export class CancionComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  bufferToBase64(b64encoded){
+
+    return 'data:image/jpeg;base64,'+b64encoded;
   }
 
 }

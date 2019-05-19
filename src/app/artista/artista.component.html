@@ -49,20 +49,19 @@
         </div>
         <div id="listaCanciones" class="lista">
 
-          <div *ngFor="let key of canart" id={{key.titulo}} class=item [routerLink]="['/cancion']"
-            [queryParams]="{ id: key.cancion_id }">
+          <div *ngFor="let key of canart" id={{key.titulo}} class=item [routerLink]="['/cancion']"[queryParams]="{ id: key.cancion_id }">
 
 
 
-           
+
             <div class="foto">
-                <img [src]="key.portada_cancion | safeurl">
+              <img [src]="key.portada_cancion | safeurl">
             </div>
             <div class="nombre">
               <p>{{key.titulo}}</p>
             </div>
 
-          
+
 
 
           </div>
@@ -79,8 +78,17 @@
         </div>
         <div id="listaAlbums" class="lista">
 
-          <div *ngFor="let key of albart" id={{key.nombre_album}} class=item>
-            <p>{{key.nombre_album}}</p>
+          <div *ngFor="let key of albart" id={{key.nombre_album}} class=item  [routerLink]="['/album']" [queryParams]="{ id: key.album_id }" >
+
+
+            <div class="foto">
+              <img [src]="key.portada_album | safeurl">
+            </div>
+            <div class="nombre">
+              <p>{{key.nombre_album}}</p>
+            </div>
+
+
           </div>
         </div>
       </div>
@@ -91,8 +99,6 @@
     <div id="boton">
 
       <a class="boton_personalizado" (click)="goBack()">Atras</a>
-
-
       <a class="boton_personalizado" (click)="goBack()">Ver fotos</a>
 
 
