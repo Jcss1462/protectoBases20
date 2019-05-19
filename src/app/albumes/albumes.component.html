@@ -32,15 +32,15 @@
 
       <div id="elementos">
 
-        <div class="cancion">
+        <div class="cancion" *ngFor="let key of canalbi; index as i" [routerLink]="['/cancion']"[queryParams]="{ id: key.id }">
           <div id="num">
-            1
+            {{i+1}}
           </div>
           <div id="fot">
-            Foto
+              <img [src]="key.portada_cancion | safeurl">
           </div>
           <div id="titulo">
-            We get
+            {{key.titulo}}
           </div>
         </div>
 

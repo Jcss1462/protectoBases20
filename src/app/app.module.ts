@@ -19,6 +19,7 @@ import{CancionesartistaService} from './services/api';
 import{AlbumesartistaService} from './services/api';
 import{CancionesService} from './services/api';
 import{AlbumesService} from './services/api';
+import{CancionesalbumService} from './services/api';
 
 //pipes
 import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
@@ -48,7 +49,8 @@ import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
     CancionesartistaService,
     AlbumesartistaService,
     CancionesService,
-    AlbumesService
+    AlbumesService,
+    CancionesalbumService
   ],
   bootstrap: [AppComponent]
 })

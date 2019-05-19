@@ -4,6 +4,7 @@ import{CancionesartistaService} from '../services/cancionesartista/cancionesarti
 import{AlbumesartistaService} from '../services/albumesartista/albumesartista.service';
 import{CancionesService} from '../services/canciones/canciones.service';
 import{AlbumesService} from '../services/albumes/albumes.service';
+import{CancionesalbumService} from '../services/cancionesalbum/cancionesalbum.service';
 
 
 //objetos
@@ -12,6 +13,7 @@ import{Canart} from '../services/cancionesartista/Canart';
 import{Albart} from '../services/albumesartista/Albart';
 import{Cancion} from '../services/canciones/cancion';
 import{Album} from '../services/albumes/album';
+import{Canalb} from '../services/cancionesalbum/canalb';
 
 export{
 
@@ -21,6 +23,7 @@ export{
     AlbumesartistaService,
     CancionesService,
     AlbumesService,
+    CancionesalbumService,
 
 
     //objetos
@@ -28,7 +31,9 @@ export{
     Canart,
     Albart,
     Cancion,
-    Album
+    Album,
+    Canalb
+    
 
 };
 

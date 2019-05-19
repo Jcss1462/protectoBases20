@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 import { Album } from '../services/api';
 import{AlbumesService} from '../services/api';
 
+import { Canalb } from '../services/api';
+import{CancionesalbumService} from '../services/api';
+
 @Component({
   selector: 'app-albumes',
   templateUrl: './albumes.component.html',
@@ -19,9 +22,10 @@ import{AlbumesService} from '../services/api';
 export class AlbumesComponent implements OnInit {
 
   albi: Album[];
+  canalbi: Canalb[]
   private id: string;
 
-  constructor(private location: Location,private router: Router, private _album:AlbumesService) { 
+  constructor(private location: Location,private router: Router, private _album:AlbumesService,private _canalb:CancionesalbumService) { 
     //sacar el parametro id y meterlo en un variable
     this.id=this.router.parseUrl(this.router.url).queryParams.id;
     console.log(this.id);
@@ -36,9 +40,19 @@ export class AlbumesComponent implements OnInit {
       }
       this.albi=data;
     });
+
+    this._canalb.getCanciones(this.id)
+    .subscribe((data)=>{
+      for(let idx=0;idx<data.length;idx++){
+
+        data[idx].portada_cancion=this.bufferToBase64(data[idx]["imagen_cancion"]["imgBase64"]);
+      }
+      this.canalbi=data;
+    });
+
+
   }
 
-  
   
   goBack(): void {
     this.location.back();
