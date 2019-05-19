@@ -1,47 +1,74 @@
 <div id="cuerpo">
 
-  <div id="selectores">
+    <div id="selectores">
 
-      <!--Genero-->
-      <div class="desplegable">
-          <div id="genero" class="activador" (click)="activarGenero()">
-              Genero
-          </div>
-          <div id="listagenero" class="lista">
+        <!--Genero-->
+        <div class="desplegable">
+            <div id="genero" class="activador" (click)="activarGenero()">
+                Genero
+            </div>
+            <div id="listagenero" class="lista">
 
-              <div id="jaz" class="item"class=item [routerLink]="['/genero']" [queryParams]="{ genero: 'jazz'  }">
-                  Jazz
-              </div>
-              <div id="pop" class="item" [routerLink]="['/genero']" [queryParams]="{ genero: 'pop'  }">
-                  Pop
-              </div>
-              <div id="rock" class="item"[routerLink]="['/genero']" [queryParams]="{ genero: 'rock'  }">
-                  Rock
-              </div>
-              <div id="electronica" class="item"[routerLink]="['/genero']" [queryParams]="{ genero: 'swing' }">
-                  Swing
-              </div>
-          </div>
-      </div>
+                <div id="jaz" class="item" class=item [routerLink]="['/genero']" [queryParams]="{ genero: 'jazz'  }">
+                    <div class="foto">
+                        <img src="../assets/jazz.jpg" alt="Foto de un saxofon" title="foto rock">
+                    </div>
+                    <div class="nombre">
+                        Jazz
+                    </div>
+                </div>
+                <div id="pop" class="item" [routerLink]="['/genero']" [queryParams]="{ genero: 'pop'  }">
+                    <div class="foto">
+                        <img src="../assets/pop.jpg" alt="Foto de un saxofon" title="foto rock">
+                    </div>
+                    <div class="nombre">
+                        Pop
+                    </div>
+                </div>
+                <div id="rock" class="item" [routerLink]="['/genero']" [queryParams]="{ genero: 'rock'  }">
 
-      <!--Artistas-->
-      <div class="desplegable">
-          <div id="artistas" class="activador" (click)="activarArtista()">
-              Artistas
-          </div>
-          <div id="listaArista" class="lista">
+                    <div class="foto">
+                        <img src="../assets/rock.jpg" alt="Foto de un saxofon" title="foto rock">
+                    </div>
+                    <div class="nombre">
+                        Rock
+                    </div>
+                </div>
+                <div id="Swing" class="item" [routerLink]="['/genero']" [queryParams]="{ genero: 'swing' }">
+                    <div class="foto">
+                        <img src="../assets/swing.jpg" alt="Foto de un saxofon" title="foto rock">
+                    </div>
+                    <div class="nombre">
+                        Swing
+                    </div>
+                </div>
+            </div>
+        </div>
 
-              <div *ngFor="let artist of artists" id={{artist.nombre}} class=item [routerLink]="['/artista']" [queryParams]="{ id: artist.id }">
-                 {{artist.nombre}}
-              </div>
-              
-                   
-          </div>
-      </div>
+        <!--Artistas-->
+        <div class="desplegable">
+            <div id="artistas" class="activador" (click)="activarArtista()">
+                Artistas
+            </div>
+            <div id="listaArista" class="lista">
+
+                <div *ngFor="let artist of artists" id={{artist.nombre}} class=item [routerLink]="['/artista']"
+                    [queryParams]="{ id: artist.id }">
+                    <div class="foto">
+                            <img [src]="artist.portada | safeurl">
+                    </div>
+                    <div class="nombre">
+                        {{artist.nombre}}
+                    </div>
+                </div>
 
 
-  </div>
+            </div>
+        </div>
 
- 
+
+    </div>
+
+
 
 </div>

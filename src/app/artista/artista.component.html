@@ -22,9 +22,6 @@
     </div>
 
 
-
-
-
   </header>
 
   <div id="contenido">
@@ -54,7 +51,20 @@
 
           <div *ngFor="let key of canart" id={{key.titulo}} class=item [routerLink]="['/cancion']"
             [queryParams]="{ id: key.cancion_id }">
-            <p>{{key.titulo}}</p>
+
+
+
+           
+            <div class="foto">
+                <img [src]="key.portada_cancion | safeurl">
+            </div>
+            <div class="nombre">
+              <p>{{key.titulo}}</p>
+            </div>
+
+          
+
+
           </div>
 
         </div>
@@ -72,12 +82,10 @@
           <div *ngFor="let key of albart" id={{key.nombre_album}} class=item>
             <p>{{key.nombre_album}}</p>
           </div>
-
-
         </div>
       </div>
 
-     
+
 
     </div>
     <div id="boton">

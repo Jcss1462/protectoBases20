@@ -40,7 +40,15 @@ export class ArtistaComponent implements OnInit {
   ngOnInit() {
 
     this._Canartist.getArtists(this.id)
-    .subscribe(artists => this.canart = artists);
+    .subscribe((data)=>{
+      for(let idx=0;idx<data.length;idx++){
+
+        data[idx].portada_cancion=this.bufferToBase64(data[idx]["imagen_cancion"]["imgBase64"]);
+      }
+      this.canart=data;
+    });
+
+    
 
     this._Artistas.getArtists(this.id)
     .subscribe((data)=>{

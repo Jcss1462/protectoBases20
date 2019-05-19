@@ -18,7 +18,13 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this._Artistas.getArtists(null)
-    .subscribe(artists => this.artists = artists);
+    .subscribe((data)=>{
+      for(let idx=0;idx<data.length;idx++){
+
+        data[idx].portada=this.bufferToBase64(data[idx]["imagen_principal"]["imgBase64"]);
+      }
+      this.artists=data;
+    });
   }
 
   
@@ -35,11 +41,12 @@ export class MainPageComponent implements OnInit {
     activador.classList.toggle('active');
   }
 
-  //activar lista de foto
-  activarFoto(): void {
-    let activador= document.getElementById("listafoto");
-    activador.classList.toggle('active');
+  bufferToBase64(b64encoded){
+
+    return 'data:image/jpeg;base64,'+b64encoded;
   }
+
+
 
 
 }
