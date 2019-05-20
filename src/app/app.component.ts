@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'proyectoDeBases20';
+
+
+  query:any
+
+
+
+  updateQuery(e) {
+    this.query = e.target.value;
+  }
+
+ 
+
 }

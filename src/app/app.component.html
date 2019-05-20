@@ -13,13 +13,19 @@
   </div>
   <div id=busqueda>
 
-      <i id="lupa" class="fas fa-search"></i>
+      
 
       <form>
-          <input id="textbar" type="text" placeholder="Buscar" required minlength="4" maxlength="8" size="60">
+          <input id="textbar" type="text" placeholder="Buscar" required minlength="4" maxlength="8" size="60" (keyup)= "updateQuery($event)">
       </form>
 
-      <i id="down" class="fas fa-sort-down"></i>
+      <div id="botonBuscar" [routerLink]="['/busqueda']" [queryParams]="{ query: this.query }">
+
+        <i id="lupa" class="fas fa-search"></i>
+
+      </div>
+
+      
 
 
   </div>

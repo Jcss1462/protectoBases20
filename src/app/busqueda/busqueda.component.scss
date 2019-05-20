@@ -1,0 +1,53 @@
+#cuerpo{
+
+    width: 99vw;
+    height: 84vh;
+
+    .separador{
+        width: 100%;
+        height: 33.3%;
+        
+        
+        .nombre{
+            width: 100%;
+            height: 20%;
+            font-size: 40px;
+        }
+        
+        .espacio{
+            display:flex;
+            float:left;
+            width: 100%;
+            height: 80%;
+            overflow-y: auto;
+        .item{
+            width: 15%;
+            height: 100%;
+            margin-right: 20px;
+            margin-left: 20px;
+            border-radius: 5px;
+            background: white;
+            .foto{
+                width: 100%;
+                height: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    width:150px;
+                    height: 150px;
+                }
+            }
+            .titulo{
+                width: 100%;
+                height: 20%;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        }
+    }
+ 
+}

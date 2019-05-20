@@ -1,0 +1,39 @@
+<div id="cuerpo">
+
+  <div class="separador" id="Artistas">
+
+    <div class="nombre">
+      Artistas
+    </div>
+
+
+    <div class="espacio">
+      <div class="item" *ngFor="let key of buscaArt"  id={{key.nombre}} [routerLink]="['/artista']"[queryParams]="{ id: key.id }"> 
+
+        <div class="foto">
+
+            <img [src]="key.portada | safeurl">
+
+        </div>
+        <div class="titulo">
+            {{key.nombre}}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="separador" id="Canciones">
+    <div class="nombre">
+      Canciones
+    </div>
+
+  </div>
+  <div class="separador" id="Letra">
+    <div class="nombre">
+      Letras
+    </div>
+
+  </div>
+
+</div>

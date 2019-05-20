@@ -8,6 +8,7 @@ import { CancionComponent } from './cancion/cancion.component';
 import { GeneroComponent } from './genero/genero.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { AlbumesComponent } from './albumes/albumes.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 //http
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,9 +21,12 @@ import{AlbumesartistaService} from './services/api';
 import{CancionesService} from './services/api';
 import{AlbumesService} from './services/api';
 import{CancionesalbumService} from './services/api';
+import{BusquedaartistaService} from './services/api';
+
 
 //pipes
 import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
+
 
 
 
@@ -37,12 +41,13 @@ import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
     MainPageComponent,
     AlbumesComponent,
     SafeurlPipe,
+    BusquedaComponent,
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     ArtistasService,
@@ -50,7 +55,8 @@ import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
     AlbumesartistaService,
     CancionesService,
     AlbumesService,
-    CancionesalbumService
+    CancionesalbumService,
+    BusquedaartistaService
   ],
   bootstrap: [AppComponent]
 })
