@@ -6,6 +6,8 @@ import{CancionesService} from '../services/canciones/canciones.service';
 import{AlbumesService} from '../services/albumes/albumes.service';
 import{CancionesalbumService} from '../services/cancionesalbum/cancionesalbum.service';
 import{BusquedaartistaService} from '../services/busquedaartista/busquedaartista.service';
+import{BusquedacancionService} from '../services/busquedacancion/busquedacancion.service';
+import{BusquedaletraService} from '../services/busquedaletra/busquedaletra.service';
 
 
 //objetos
@@ -16,6 +18,8 @@ import{Cancion} from '../services/canciones/cancion';
 import{Album} from '../services/albumes/album';
 import{Canalb} from '../services/cancionesalbum/canalb';
 import{Busart} from '../services/busquedaartista/busart';
+import{Buscan} from '../services/busquedacancion/buscan';
+import{Buslet} from '../services/busquedaletra/buslet';
 
 export{
 
@@ -27,6 +31,8 @@ export{
     AlbumesService,
     CancionesalbumService,
     BusquedaartistaService,
+    BusquedacancionService,
+    BusquedaletraService,
 
 
     //objetos
@@ -36,7 +42,9 @@ export{
     Cancion,
     Album,
     Canalb,
-    Busart
+    Busart,
+    Buscan,
+    Buslet
     
 
 };

@@ -22,6 +22,8 @@ import{CancionesService} from './services/api';
 import{AlbumesService} from './services/api';
 import{CancionesalbumService} from './services/api';
 import{BusquedaartistaService} from './services/api';
+import{BusquedacancionService} from './services/api';
+import{BusquedaletraService} from './services/api';
 
 
 //pipes
@@ -56,7 +58,9 @@ import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
     CancionesService,
     AlbumesService,
     CancionesalbumService,
-    BusquedaartistaService
+    BusquedaartistaService,
+    BusquedacancionService,
+    BusquedaletraService
   ],
   bootstrap: [AppComponent]
 })

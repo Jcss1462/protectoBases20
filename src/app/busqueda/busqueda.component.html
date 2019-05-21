@@ -28,12 +28,40 @@
       Canciones
     </div>
 
+     <div class="espacio">
+      <div class="item" *ngFor="let key of buscaCan"  id={{key.titulo}} [routerLink]="['/cancion']"[queryParams]="{ id: key.id }"> 
+
+        <div class="foto">
+
+            <img [src]="key.portada | safeurl">
+
+        </div>
+        <div class="titulo">
+            {{key.titulo}}
+        </div>
+      </div>
+
   </div>
-  <div class="separador" id="Letra">
+ 
+
+</div>
+ <div class="separador" id="Letra">
     <div class="nombre">
       Letras
     </div>
 
-  </div>
+    <div class="espacio">
+      <div class="item" *ngFor="let key of buscaLet"  id={{key.titulo}} [routerLink]="['/cancion']"[queryParams]="{ id: key.id }"> 
 
-</div>
+        <div class="foto">
+
+            <img [src]="key.portada | safeurl">
+
+        </div>
+        <div class="titulo">
+            {{key.titulo}}
+        </div>
+      </div>
+
+  </div>
+  </div>

@@ -10,6 +10,11 @@ import { Location } from '@angular/common';
 import { Busart } from '../services/api';
 import{BusquedaartistaService} from '../services/api';
 
+import { Buscan } from '../services/api';
+import{BusquedacancionService} from '../services/api';
+
+import { Buslet } from '../services/api';
+import{BusquedaletraService} from '../services/api';
 
 
 @Component({
@@ -20,18 +25,18 @@ import{BusquedaartistaService} from '../services/api';
 export class BusquedaComponent implements OnInit {
 
   buscaArt: Busart[];
+  buscaCan: Buscan[];
+  buscaLet: Buslet[];
 
   private query: string;
 
-  constructor(private location: Location,private router: Router,private _busart:BusquedaartistaService) {
+  constructor(private location: Location,private router: Router,private _busart:BusquedaartistaService,private _buscan:BusquedacancionService,private _buslet:BusquedaletraService) {
     //sacar el parametro id y meterlo en un variable
     this.query=this.router.parseUrl(this.router.url).queryParams.query;
     console.log(this.query);
    }
 
   ngOnInit() {
-
-    
 
     this._busart.getArtists(this.query)
     .subscribe((data)=>{
@@ -40,6 +45,25 @@ export class BusquedaComponent implements OnInit {
         data[idx].portada=this.bufferToBase64(data[idx]["imagen_principal"]["imgBase64"]);
       }
       this.buscaArt=data;
+    });
+
+
+    this._buscan.getCancion(this.query)
+    .subscribe((data)=>{
+      for(let idx=0;idx<data.length;idx++){
+
+        data[idx].portada=this.bufferToBase64(data[idx]["imagen_cancion"]["imgBase64"]);
+      }
+      this.buscaCan=data;
+    });
+
+    this._buslet.getCancion(this.query)
+    .subscribe((data)=>{
+      for(let idx=0;idx<data.length;idx++){
+
+        data[idx].portada=this.bufferToBase64(data[idx]["imagen_cancion"]["imgBase64"]);
+      }
+      this.buscaLet=data;
     });
 
     
