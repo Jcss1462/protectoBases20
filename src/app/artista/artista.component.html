@@ -99,7 +99,7 @@
     <div id="boton">
 
       <a class="boton_personalizado" (click)="goBack()">Atras</a>
-      <a class="boton_personalizado" (click)="goBack()">Ver fotos</a>
+      <a class="boton_personalizado" [routerLink]="['/imagenes']" [queryParams]="{ id: id }">Ver fotos</a>
 
 
     </div>

@@ -1,0 +1,25 @@
+<div id="cuerpo">
+
+  <header>
+
+    <div id="nombre">
+      Galeria
+    </div>
+
+  </header>
+  <div id="contenido">
+
+    <div class="item" *ngFor="let key of imsartis">
+
+        <img [src]="key.imagen | safeurl">
+
+    </div>
+
+
+  </div>
+
+  <div id="boton">
+    <a class="boton_personalizado" (click)="goBack()">Atras</a>
+  </div>
+
+</div>
