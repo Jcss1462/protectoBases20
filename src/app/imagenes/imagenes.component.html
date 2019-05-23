@@ -9,11 +9,13 @@
   </header>
   <div id="contenido">
 
-    <div class="item" *ngFor="let key of imsartis">
+    <div class="item" *ngFor="let key of imsartis" [routerLink]="['/edicion']" [queryParams]="{ id: key.id_imagen }" >
 
         <img [src]="key.imagen | safeurl">
 
     </div>
+
+    
 
 
   </div>

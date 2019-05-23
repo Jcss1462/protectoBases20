@@ -9,6 +9,7 @@ import{BusquedaartistaService} from '../services/busquedaartista/busquedaartista
 import{BusquedacancionService} from '../services/busquedacancion/busquedacancion.service';
 import{BusquedaletraService} from '../services/busquedaletra/busquedaletra.service';
 import{ImagenesartistasService} from '../services/imagenesartistas/imagenesartistas.service';
+import{EdicionService} from '../services/edidcion/edicion.service';
 
 
 //objetos
@@ -22,6 +23,7 @@ import{Busart} from '../services/busquedaartista/busart';
 import{Buscan} from '../services/busquedacancion/buscan';
 import{Buslet} from '../services/busquedaletra/buslet';
 import{Imartist} from '../services/imagenesartistas/imartist';
+import{Edi} from '../services/edidcion/edi';
 
 export{
 
@@ -36,6 +38,7 @@ export{
     BusquedacancionService,
     BusquedaletraService,
     ImagenesartistasService,
+    EdicionService,
 
 
     //objetos
@@ -48,7 +51,8 @@ export{
     Busart,
     Buscan,
     Buslet,
-    Imartist
+    Imartist,
+    Edi
     
 
 };

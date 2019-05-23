@@ -10,6 +10,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { AlbumesComponent } from './albumes/albumes.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { ImagenesComponent } from './imagenes/imagenes.component';
+import { EdicionComponent } from './edicion/edicion.component';
 //http
 import { HttpClientModule } from '@angular/common/http';
 
@@ -26,13 +27,11 @@ import{BusquedaartistaService} from './services/api';
 import{BusquedacancionService} from './services/api';
 import{BusquedaletraService} from './services/api';
 import{ImagenesartistasService} from './services/api';
+import{EdicionService} from './services/api';
 
 
 //pipes
 import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
-
-
-
 
 
 
@@ -48,6 +47,7 @@ import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
     SafeurlPipe,
     BusquedaComponent,
     ImagenesComponent,
+    EdicionComponent,
     
   ],
   imports: [
@@ -65,7 +65,8 @@ import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
     BusquedaartistaService,
     BusquedacancionService,
     BusquedaletraService,
-    ImagenesartistasService
+    ImagenesartistasService,
+    EdicionService
   ],
   bootstrap: [AppComponent]
 })

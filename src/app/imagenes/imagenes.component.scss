@@ -51,6 +51,12 @@
              height: 70%; 
             }
         }
+        .item:hover{
+          cursor: pointer;
+          background: rgb(71, 71, 71);
+
+        }
+        
     }
     #boton{
         width: 30%;

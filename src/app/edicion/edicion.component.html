@@ -1,0 +1,61 @@
+<div id="cuerpo">
+
+  <div id="contenido">
+
+    <div id="pre">
+
+      <div class="item" *ngFor="let key of imsartis">
+
+          <img [src]="key.imagen | safeurl">
+  
+      </div>
+
+    </div>
+
+    <div id="opciopnes">
+
+
+      <div id="escala" class="opt">
+
+        <div id="cuadro">
+          X:<input id="x" type="text" name="fname" placeholder="0" (keyup)= "x($event)">
+          Y:<input id="y" type="text" name="fname" placeholder="0" (keyup)= "y($event)">
+        </div>
+
+      </div>
+
+
+      <div id="calidad" class="opt">
+
+        <select id="selcali" (change)="changeCal($event)">
+          <option value="ninguno">Ninguno</option>
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option>
+        </select>
+
+      </div>
+
+      <div id="color" class="opt">
+
+        <select id="selcol" (change)="changeColor($event)" >
+          <option value="ninguno">Ninguno</option>
+          <option value="rojo">Rojo</option>
+          <option value="azul">Azul</option>
+          <option value="verde">Verde</option>
+          <option value="monocromatico">Monocromatico</option>
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="boton">
+    <a class="boton_personalizado" (click)="goBack()">Atras</a>
+    <a class="boton_personalizado" (click)="Previsualizar()">Previsualizar</a>
+    <a class="boton_personalizado">Descargar</a>
+  </div>
+
+</div>
