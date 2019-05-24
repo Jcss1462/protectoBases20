@@ -30,8 +30,8 @@ export class EdicionComponent implements OnInit {
 
   calidad: any = "ninguno";
 
+  filename: any = null;
 
-  
 
   constructor(private location: Location, private router: Router, private _edi: EdicionService) {
     this.id = this.router.parseUrl(this.router.url).queryParams.id;
@@ -53,15 +53,24 @@ export class EdicionComponent implements OnInit {
   }
   ///////////////////////////////////////////////////////////////////////////////////
 
+  name(e) {
+
+    this.filename = e.target.value;
+    console.log(this.filename);
+
+  }
+
 
   x(e) {
     this.xsize = e.target.value;
     console.log(this.xsize);
+    this.Previsualizar();
   }
 
   y(e) {
     this.ysize = e.target.value;
     console.log(this.ysize);
+    this.Previsualizar();
   }
 
 
@@ -69,29 +78,81 @@ export class EdicionComponent implements OnInit {
     //update the ui
     this.colval = event.target.value;
     console.log(this.colval);
+    this.Previsualizar();
   }
   changeCal(event: any) {
     //update the ui
     this.calidad = event.target.value;
     console.log(this.calidad);
+    this.Previsualizar();
   }
 
-  Previsualizar() {
-    let verb: any="";
 
-    if ((this.xsize != null && this.ysize != null) || this.colval != "ninguno"||this.calidad!="ninguno") {
+  download() {
+
+    //para cerrar la ventana despueds de descargada
+    let ventanaCe = document.getElementById("filename");
+
+    
+    let verb: any = "";
+
+
+    if (this.filename != null) {
+
+      verb = verb + '&filename=' + this.filename + '.jpg';
+
+      if (this.xsize != null && this.ysize != null) {
+
+        verb = verb + '&sx=' + this.xsize + "&sy=" + this.ysize;
+      }
+
+      if (this.colval != "ninguno") {
+        verb = verb + '&col=' + this.colval;
+      }
+
+      if (this.calidad != "ninguno") {
+        verb = verb + '&cali=' + this.calidad;
+      }
+
+      console.log(verb);
+
+      this._edi.getEditable(this.id, verb).subscribe((data) => {
+
+        if (data) {
+          alert("Descarga exitosa");
+          ventanaCe.style.display = "none";
+          verb = "";
+          this.filename=null;
+          
+
+        }else{
+          alert("Ha ocurrido un error");
+        }
+      });
+    } else {
+      alert("Error: nombre al archivo");
+    }
+
+  }
+
+
+
+  Previsualizar() {
+    let verb: any = "";
+
+    if ((this.xsize != null && this.ysize != null) || this.colval != "ninguno" || this.calidad != "ninguno") {
       this.imsartis = [];
       if (this.xsize != null && this.ysize != null) {
 
-        verb=verb+ '&sx=' + this.xsize + "&sy=" + this.ysize;
-      }
-      
-      if (this.colval!= "ninguno") {
-        verb =verb+  '&col=' + this.colval;
+        verb = verb + '&sx=' + this.xsize + "&sy=" + this.ysize;
       }
 
-      if (this.calidad!="ninguno") {
-        verb =verb+  '&cali=' + this.calidad;
+      if (this.colval != "ninguno") {
+        verb = verb + '&col=' + this.colval;
+      }
+
+      if (this.calidad != "ninguno") {
+        verb = verb + '&cali=' + this.calidad;
       }
 
 
@@ -104,7 +165,7 @@ export class EdicionComponent implements OnInit {
           }
           this.imsartis = data;
         });
-    }else{
+    } else {
 
       this._edi.getArtists(this.id)
         .subscribe((data) => {
@@ -120,6 +181,13 @@ export class EdicionComponent implements OnInit {
   }
 
 
+  restablecer() {
+    this.xsize = null;
+    this.ysize = null;
+    this.colval = "ninguno";
+    this.calidad = "ninguno";
+    this.Previsualizar();
+  }
 
 
   //////////////////////////////////////////////////////////////////////
@@ -132,5 +200,15 @@ export class EdicionComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  opendescarga() {
+    let ventanaCe = document.getElementById("filename");
+    ventanaCe.style.display = "inline-block";
+  }
+  close() {
+    let ventanaCe = document.getElementById("filename");
+    ventanaCe.style.display = "none";
+  }
+
 
 }

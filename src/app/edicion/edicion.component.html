@@ -1,13 +1,43 @@
 <div id="cuerpo">
 
+  <div id="filename">
+
+    <div id="xbot">
+
+      <div id="exitbox" (click)="close()">
+        <i class="fas fa-window-close"></i>
+      </div>
+
+    </div>
+
+
+    <div id="input">
+        <input id="name" type="text" name="name" placeholder="Nombre" (keyup)="name($event)">
+    </div>
+
+    <div id="descargar">
+      
+
+        <div id="debot" (click)="download()">
+          Descargar
+        </div>
+        
+    </div>
+
+  </div>
+
   <div id="contenido">
 
     <div id="pre">
 
-      <div class="item" *ngFor="let key of imsartis">
+      <div id="etiqueta">
+        Previsulización
+      </div>
 
-          <img [src]="key.imagen | safeurl">
-  
+      <div id="imagen" class="item" *ngFor="let key of imsartis">
+
+        <img [src]="key.imagen | safeurl">
+
       </div>
 
     </div>
@@ -17,15 +47,17 @@
 
       <div id="escala" class="opt">
 
+
         <div id="cuadro">
-          X:<input id="x" type="text" name="fname" placeholder="0" (keyup)= "x($event)">
-          Y:<input id="y" type="text" name="fname" placeholder="0" (keyup)= "y($event)">
+          X:<input id="x" type="text" name="fname" placeholder="0" (keyup)="x($event)">
+          Y:<input id="y" type="text" name="fname" placeholder="0" (keyup)="y($event)">
         </div>
 
       </div>
 
 
       <div id="calidad" class="opt">
+
 
         <select id="selcali" (change)="changeCal($event)">
           <option value="ninguno">Ninguno</option>
@@ -38,7 +70,7 @@
 
       <div id="color" class="opt">
 
-        <select id="selcol" (change)="changeColor($event)" >
+        <select id="selcol" (change)="changeColor($event)">
           <option value="ninguno">Ninguno</option>
           <option value="rojo">Rojo</option>
           <option value="azul">Azul</option>
@@ -54,8 +86,8 @@
 
   <div id="boton">
     <a class="boton_personalizado" (click)="goBack()">Atras</a>
-    <a class="boton_personalizado" (click)="Previsualizar()">Previsualizar</a>
-    <a class="boton_personalizado">Descargar</a>
+    <a class="boton_personalizado" (click)="restablecer()">Restablecer</a>
+    <a class="boton_personalizado" (click)="opendescarga()">Descargar</a>
   </div>
 
 </div>
