@@ -22,7 +22,6 @@
   
   #foto{
     width: 10%;
-    min-width: 150px;
     height: 100%;
     border: 2px solid #ffffff;
     display: flex;
@@ -31,12 +30,10 @@
     img{
       width: 100%;
       height: 100%;
-      min-height: 50%;
     }
   }
   #nombre{
     width: 40%;
-    min-width: 200px;
     height: 100%;
     display: flex;
     align-items: flex-end;
@@ -166,3 +163,84 @@
     }
   }
   
+@media screen and (max-width: 360px){
+
+  #cuerpo{
+    width: 99vw;
+    height: 84vh;
+    display: inline-block;
+    box-sizing: border-box;
+  header{
+    width: 100%;
+    height: 20%;
+    background: rgb(1, 71, 141);
+    display: flex;
+    #foto{
+      width: 30%;
+      height: 100%;
+      border: 2px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        width:  100%;
+        height: 100%;
+      }
+    }
+    #nombre{
+      width: 60%;
+      height: 100%;
+      display: flex;
+      font-size: 35px;
+    }
+  }
+
+  ///////////
+
+  #contenido{
+    
+   
+    #listacan{
+
+  #elementos{
+    width:100%;
+    height: 90%;
+    display: inline-block;
+    overflow-x: auto;
+    .cancion{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-size: 25px;
+        color: #ffffff;
+        margin-top: 5px;
+
+        #num{
+            width:33.3%;
+            justify-content: center;
+               
+        }
+        #fot{
+            width:33.3%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+              width: 90px;
+              height: 90px;
+              border: 2px solid #ffffff;
+            }
+            
+        }
+        #titulo{
+            width:33.3%;
+            justify-content: center;
+        }
+      }
+    }
+  }
+}
+}
+}

@@ -12,6 +12,7 @@
             width: 100%;
             height: 20%;
             font-size: 40px;
+            background: #00C9CC;
         }
         
         .espacio{
@@ -20,13 +21,15 @@
             width: 100%;
             height: 80%;
             overflow-y: auto;
+            align-items: center;
         .item{
-            width: 10%;
+            width: 12%;
+            min-width: 170px;
             height: 95%;
             margin-right: 20px;
             margin-left: 20px;
             border-radius: 5px;
-            background: white;
+            background: rgba($color: #535353, $alpha: 2.0);
             .foto{
                 width: 100%;
                 height: 80%;
@@ -34,8 +37,8 @@
                 align-items: center;
                 justify-content: center;
                 img{
-                    width:150px;
-                    height: 150px;
+                    width:135px;
+                    height: 135px;
                 }
             }
             .titulo{
@@ -55,4 +58,63 @@
         }
     }
  
+}
+
+@media screen and (max-width: 360px){
+
+    #cuerpo{
+
+        width: 99vw;
+        height: 84vh;
+    
+        .separador{
+            width: 100%;
+            height: 33.3%;
+            
+            .nombre{
+                width: 100%;
+                height: 20%;
+                font-size: 30px;
+                background: #00C9CC;
+                display: flex;
+                align-items: center;
+            }
+            .espacio{
+                display:flex;
+                float:left;
+                width: 100%;
+                height: 80%;
+                overflow-y: auto;
+                align-items: center;
+            .item{
+                min-width: 120px;
+                height: 95%;
+                margin-right: 20px;
+                margin-left: 20px;
+                border-radius: 5px;
+                background: rgba($color: #535353, $alpha: 2.0);
+                .foto{
+                    width: 100%;
+                    height: 80%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        width:90px;
+                        height: 90px;
+                    }
+                }
+                .titulo{
+                    width: 100%;
+                    height: 20%;
+                    font-size: 13px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            }
+        }
+    }
+
 }
