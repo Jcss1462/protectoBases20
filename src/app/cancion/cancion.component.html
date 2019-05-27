@@ -1,17 +1,47 @@
 <div id="cuerpo">
 
+
+  <!------------------------------------------------------>
+  <div id="filename">
+
+      <div id="xbot">
+  
+        <div id="exitbox" (click)="close()">
+          <i class="fas fa-window-close"></i>
+        </div>
+  
+      </div>
+  
+  
+      <div id="input">
+          <input id="name" type="text" name="name" placeholder="Nombre" (keyup)="name($event)">
+      </div>
+  
+      <div id="descargar">
+        
+  
+          <div id="debot" (click)="download()">
+            Descargar
+          </div>
+          
+      </div>
+  
+    </div>
+    <!------------------------------------------------------>
+
+
   <header *ngFor="let key of canci">
 
     <div id="foto">
 
-        <img [src]="key.portada_cancion | safeurl">
+      <img [src]="key.portada_cancion | safeurl">
 
     </div>
 
     <!--nombre-->
     <div id="nombre">
 
-      <div  id={{key.titulo}}>
+      <div id={{key.titulo}}>
         {{key.titulo}}
       </div>
 
@@ -39,13 +69,21 @@
       </div>
 
       <div id=caractericticas>
-        Caracteristicas
+        <div id="info">
+          <div id="etiqueta">
+            Datos de la cancion:
+          </div>
+
+          <div id="data" *ngFor="let key of canci">
+            {{key.info}}
+          </div>
+        </div>
       </div>
 
     </div>
     <div id="boton">
       <a class="boton_personalizado" (click)="goBack()">Atras</a>
-      <a class="boton_personalizado" (click)="goBack()">Descargar</a>
+      <a class="boton_personalizado" (click)="opendescarga()">Descargar</a>
     </div>
 
   </div>

@@ -88,6 +88,80 @@
     
   }
 
+  #filename{
+    width: 500px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    display: none;
+    background: rgb(57, 58, 58);
+    #xbot{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        #exitbox{
+            margin-left: 92%;
+            width: 35px;
+            height:35px;
+            display: flex;
+            font-size: 30px;
+            align-items: center;
+            justify-content: center;
+            color: red;
+        }#exitbox:hover{
+            cursor: pointer;
+            color: rgb(116, 0, 0);
+        }
+
+
+    }
+    #input{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input{
+            width: 60%;
+            height: 40%;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+    
+        
+    }
+    #descargar{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #debot{
+            width: 18%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(0, 225, 255);
+            border-radius: 5px;
+            font-weight: bold;
+        } #debot:hover{
+
+            cursor: pointer;
+            background: rgb(0, 156, 177);
+
+        }
+    }
+
+
+}
+
 }
 
 
@@ -108,6 +182,26 @@
     width: 50%;
     height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    #info{
+      width: 80%;
+      height: 50%;
+      background:#616161; 
+      border-radius: 5px;
+      display: inline-block;
+      #etiqueta{
+        width: 100%;
+        height: 20%;
+        font-size: 30px;
+      }
+
+      #data{
+        width: 100%;
+        height: 80%;
+        font-size: 15px;
+      }
+    }
   }
 
 }

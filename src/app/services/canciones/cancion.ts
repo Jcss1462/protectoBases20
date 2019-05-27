@@ -3,4 +3,5 @@ export class Cancion {
     titulo: string;
     letra: string;
     portada_cancion: string;
+    info: string;
 }

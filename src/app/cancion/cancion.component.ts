@@ -20,6 +20,7 @@ export class CancionComponent implements OnInit {
 
   canci: Cancion[];
   private id: string;
+  filename: any = null;
 
   constructor(private location: Location,private router: Router, private _cancion:CancionesService) { 
     //sacar el parametro id y meterlo en un variable
@@ -33,6 +34,7 @@ export class CancionComponent implements OnInit {
       for(let idx=0;idx<data.length;idx++){
 
         data[idx].portada_cancion=this.bufferToBase64(data[idx]["imagen_cancion"]["imgBase64"]);
+        data[idx].info=data[idx]["info"]["info"];
       }
       this.canci=data;
     });
@@ -53,6 +55,48 @@ export class CancionComponent implements OnInit {
   bufferToBase64(b64encoded){
 
     return 'data:image/jpeg;base64,'+b64encoded;
+  }
+
+  opendescarga() {
+    let ventanaCe = document.getElementById("filename");
+    ventanaCe.style.display = "inline-block";
+  }
+  close() {
+    let ventanaCe = document.getElementById("filename");
+    ventanaCe.style.display = "none";
+  }
+
+  name(e) {
+
+    this.filename = e.target.value;
+    console.log(this.filename);
+
+  }
+
+  download() {
+    //para cerrar la ventana despueds de descargada
+    let ventanaCe = document.getElementById("filename");
+    let verb: any = "";
+
+    if (this.filename != null) {
+      verb = verb + '&filename=' + this.filename + '.mp3';
+      console.log(verb);
+      
+      this._cancion.downloadsSong(this.id, verb).subscribe((data) => {
+        if (data) {
+          alert("Descarga exitosa");
+          ventanaCe.style.display = "none";
+          verb = "";
+          this.filename=null;
+          
+        }else{
+          alert("Ha ocurrido un error");
+        }
+      });
+    } else {
+      alert("Error: nombre al archivo");
+    }
+
   }
 
 }
