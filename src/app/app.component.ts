@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,14 @@ export class AppComponent {
   query:any
 
 
+  constructor(private location: Location){}
 
   updateQuery(e) {
     this.query = e.target.value;
+  }
+
+  redirectToSearch(){
+    window.location.href = "http://localhost:4200/busqueda?query="+this.query;
   }
 
  

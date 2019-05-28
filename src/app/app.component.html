@@ -19,7 +19,8 @@
           <input id="textbar" type="text" placeholder="Buscar" required minlength="4" maxlength="8" size="60" (keyup)= "updateQuery($event)">
       </form>
 
-      <div id="botonBuscar" [routerLink]="['/busqueda']" [queryParams]="{ query: this.query }">
+      <div id="botonBuscar" (click)="redirectToSearch()">
+        <!--[routerLink]="['/busqueda']" [queryParams]="{ query: this.query }"-->
 
         <i id="lupa" class="fas fa-search"></i>
 
