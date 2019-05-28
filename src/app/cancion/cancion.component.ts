@@ -88,7 +88,6 @@ export class CancionComponent implements OnInit {
           ventanaCe.style.display = "none";
           verb = "";
           this.filename=null;
-          
         }else{
           alert("Ha ocurrido un error");
         }

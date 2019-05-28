@@ -16,7 +16,7 @@
     display: flex;
     #foto{
       width: 10%;
-      min-width: 150px;
+     
       height: 100%;
       border: 2px solid #ffffff;
       display: flex;
@@ -25,12 +25,12 @@
       img{
         width: 100%;
         height: 100%;
-        min-height: 50%;
+       
       }
     }
     #nombre{
       width: 40%;
-      min-width: 200px;
+     
       height: 100%;
       display: flex;
       align-items: flex-end;
@@ -185,7 +185,7 @@
     justify-content: center;
     align-items: center;
     #info{
-      width: 80%;
+      width: 50%;
       height: 50%;
       background:#616161; 
       border-radius: 5px;
@@ -194,6 +194,7 @@
         width: 100%;
         height: 20%;
         font-size: 30px;
+        font-weight: bold;
       }
 
       #data{
@@ -214,9 +215,9 @@
   .desplegable{
     display: inline-block;
     width: 100%;
-    min-width: 200px;
+   
     height: 95%;
-    min-height: 300px;
+ 
     .activador{
       width: 100%;
       height: 14%;
@@ -272,6 +273,259 @@
 
 
 
+@media screen and (max-width: 360px){
 
+  #cuerpo{
+    width: 99vw;
+    height: 84vh;
+    display: inline-block;
+    box-sizing: border-box;
+  header{
+    width: 100%;
+    height: 20%;
+    background: rgb(1, 71, 141);
+    display: flex;
+    #foto{
+      width: 30%;
+      height: 100%;
+      border: 2px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    #nombre{
+      width: 60%;
+      height: 100%;
+      display: flex;
+      font-size: 30px;
+    }
+  }
+
+  #contenido{
+    width: 100%;
+    height: 80%;
+    display: inline-block;
+
+    #opciones{
+      width:100%;
+      height: 80%;
+      display:inline-block;
+      overflow-y: auto;
+      #selectores{
+        width: 100%;
+        height: auto;
+        #desplegableBiografia{
+          width: 100%;
+        }
+        .desplegable{
+          width: 100%;
+          display: inline-block;
+          .activador{
+            width: 100%;
+            height: 50px;
+            background: #00C9CC;
+            display: flex;
+            font-size: 25px;
+          }
+          .lista{
+            width: 100%;
+            height: 0%;
+            display: inline-block;
+            transition: all 0.2s ease;
+    
+    
+            .item{
+              width: 100%;
+              height: auto;
+              display: flex;
+              color: white;
+              background: gray;
+              flex-flow: row wrap;
+              justify-content: space-around;
+              
+              .foto{ 
+                width: 50%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                img{
+                    width: 100px;
+                    height: 100px;
+                    border: 2px solid #ffffff;
+                }
+              }
+      
+              .nombre{ 
+                width: 50%;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+      
+      
+              &:hover{
+                cursor: pointer;
+                background: rgb(73, 73, 73);
+              }
+              }
+    
+    
+            &.active{
+              height: auto;
+              overflow-y: auto;
+              font-size: 20px;
+              img{
+                display:flex;
+              }
+      
+            }
+          }
+        }
+      }
+
+      #caractericticas{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+          #info{
+            width: 80%;
+            height: 80%;
+            background:#616161; 
+            border-radius: 5px;
+            display: inline-block;
+              #etiqueta{
+                width: 100%;
+                height: 20%;
+                font-size: 20px;
+                font-weight: bold;
+              }
+
+              #data{
+              width: 100%;
+              height: 80%;
+              font-size: 15px;
+              }
+            }
+      }
+    
+    }
+    #boton{
+      width: 100%;
+      height: 20%;
+      display: flex;
+      align-items: center;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      .boton_personalizado{
+        text-decoration: none;
+        padding: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        color: #000000;
+        background-color: #00D9FF;
+        border-radius: 6px;
+        border: 2px solid #0078b0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        &:hover{
+          background-color: rgb(46, 163, 184);
+          cursor: pointer;
+        }
+      }
+    }
+
+  
+  }
+
+  #filename{
+    width: 300px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    display: none;
+    background: rgb(57, 58, 58);
+    #xbot{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        #exitbox{
+            margin-left: 88%;
+            width: 35px;
+            height:35px;
+            display: flex;
+            font-size: 30px;
+            align-items: center;
+            justify-content: center;
+            color: red;
+        }#exitbox:hover{
+            cursor: pointer;
+            color: rgb(116, 0, 0);
+        }
+
+
+    }
+    #input{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input{
+            width: 60%;
+            height: 40%;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+    
+        
+    }
+    #descargar{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #debot{
+            width: 25%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(0, 225, 255);
+            border-radius: 5px;
+            font-weight: bold;
+        } #debot:hover{
+
+            cursor: pointer;
+            background: rgb(0, 156, 177);
+
+        }
+    }
+
+
+}
+
+
+}
+
+
+}
 
 
