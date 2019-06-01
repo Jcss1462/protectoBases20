@@ -1,0 +1,24 @@
+<div id="cuerpo">
+
+  <header>
+
+    <div id="nombre">
+      Resultados
+    </div>
+
+  </header>
+  <div id="contenido">
+
+    <div class="item" *ngFor="let key of buscaimagen" [routerLink]="['/artista']" [queryParams]="{ id: key.id_artista }" >
+
+        <img [src]="key.portada | safeurl">
+
+    </div>
+
+  
+  </div>
+  <div id="boton">
+    <a class="boton_personalizado" (click)="goBack()">Atras</a>
+  </div>
+
+</div>

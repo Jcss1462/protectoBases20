@@ -11,6 +11,7 @@ import {AlbumesComponent} from './albumes/albumes.component';
 import {BusquedaComponent} from './busqueda/busqueda.component';
 import {ImagenesComponent} from './imagenes/imagenes.component';
 import {EdicionComponent} from './edicion/edicion.component';
+import {BusquedaImagenComponent} from './busqueda-imagen/busqueda-imagen.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'imagenes', component: ImagenesComponent },
   { path: 'busqueda', component: BusquedaComponent },
   { path: 'edicion', component: EdicionComponent },
+  { path: 'busquedaimagen', component: BusquedaImagenComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: '**', redirectTo: '/main', pathMatch: 'full' }
 

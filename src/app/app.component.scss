@@ -47,7 +47,7 @@ header{
   display: flex;
   align-items: center;
 
-  #botonBuscar{
+  .botonBuscar{
     width: 20%;
     height: 100%;
     align-items: center;
@@ -64,7 +64,7 @@ header{
     font-size: 18px;
     }
   }
-  #botonBuscar:hover{
+  .botonBuscar:hover{
 
     cursor: pointer;
     background: rgb(204, 204, 204);
@@ -131,7 +131,7 @@ footer{
     display: flex;
     align-items: center;
   
-    #botonBuscar{
+    .botonBuscar{
       width: 20%;
       height: 100%;
       align-items: center;
@@ -148,7 +148,7 @@ footer{
       font-size: 18px;
       }
     }
-    #botonBuscar:hover{
+    .botonBuscar:hover{
   
       cursor: pointer;
       background: rgb(204, 204, 204);

@@ -23,6 +23,11 @@ export class AppComponent {
     window.location.href = "http://localhost:4200/busqueda?query="+this.query;
   }
 
+  redirectToImage(){
+    window.location.href = "http://localhost:4200/busquedaimagen?filename="+this.query;
+  }
+
+
  
 
 }

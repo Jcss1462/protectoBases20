@@ -11,6 +11,7 @@ import { AlbumesComponent } from './albumes/albumes.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { ImagenesComponent } from './imagenes/imagenes.component';
 import { EdicionComponent } from './edicion/edicion.component';
+import { BusquedaImagenComponent } from './busqueda-imagen/busqueda-imagen.component';
 //http
 import { HttpClientModule } from '@angular/common/http';
 
@@ -28,6 +29,7 @@ import{BusquedacancionService} from './services/api';
 import{BusquedaletraService} from './services/api';
 import{ImagenesartistasService} from './services/api';
 import{EdicionService} from './services/api';
+import{BusquedaimagenService} from './services/api';
 
 
 //pipes
@@ -48,6 +50,7 @@ import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
     BusquedaComponent,
     ImagenesComponent,
     EdicionComponent,
+    BusquedaImagenComponent,
     
   ],
   imports: [
@@ -66,7 +69,8 @@ import { SafeurlPipe } from './pipes/safeurl/safeurl.pipe';
     BusquedacancionService,
     BusquedaletraService,
     ImagenesartistasService,
-    EdicionService
+    EdicionService,
+    BusquedaimagenService
   ],
   bootstrap: [AppComponent]
 })
