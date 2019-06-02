@@ -309,6 +309,12 @@
             }
     
           }
+          &.biografica.active{
+            height: auto;
+            background: gray;
+            overflow-y: auto;
+            font-size: 20px;
+          }
         }
 
       }
