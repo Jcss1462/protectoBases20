@@ -46,7 +46,23 @@ export class ArtistaComponent implements OnInit {
         data[idx].portada_cancion=this.bufferToBase64(data[idx]["imagen_cancion"]["imgBase64"]);
       }
       this.canart=data;
-    });
+
+
+      console.log("extraxion de datos de canciones de artistas exitosa");
+      localStorage.setItem("canart",JSON.stringify(data));
+    },(error) =>{ 
+      console.log(error.message);
+      console.log("error de conexion a canciones artistas\nintento de usar el local storage");
+
+      if(localStorage.getItem('canart')==null){
+        console.log('Local storage vacio')
+      }else{
+        this.canart=JSON.parse(localStorage.getItem('canart'));
+        console.log('Local storage usado')
+      }
+
+    }
+    );
 
     
 
@@ -57,7 +73,23 @@ export class ArtistaComponent implements OnInit {
         data[idx].portada=this.bufferToBase64(data[idx]["imagen_principal"]["imgBase64"]);
       }
       this.artists=data;
-    });
+
+
+      console.log("extraxion de datos de nombre de artistas exitoso");
+      localStorage.setItem("especificartist",JSON.stringify(data));
+    },(error) =>{ 
+      console.log(error.message);
+      console.log("error de conexion a nombre artista especifico\nintento de usar el local storage");
+
+      if(localStorage.getItem('especificartist')==null){
+        console.log('Local storage vacio')
+      }else{
+        this.artists=JSON.parse(localStorage.getItem('especificartist'));
+        console.log('Local storage usado')
+      }
+
+    }
+    );
 
 
 
@@ -68,7 +100,24 @@ export class ArtistaComponent implements OnInit {
         data[idx].portada_album=this.bufferToBase64(data[idx]["imagen_album"]["imgBase64"]);
       }
       this.albart=data;
-    });
+
+
+      
+      console.log("extraxion de datos de albumes de artista");
+      localStorage.setItem("albart",JSON.stringify(data));
+    },(error) =>{ 
+      console.log(error.message);
+      console.log("error de conexion a albumes de artista\nintento de usar el local storage");
+
+      if(localStorage.getItem('albart')==null){
+        console.log('Local storage vacio')
+      }else{
+        this.albart=JSON.parse(localStorage.getItem('albart'));
+        console.log('Local storage usado')
+      }
+
+    }
+    );
 
   }
 

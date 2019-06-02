@@ -67,8 +67,23 @@ export class GeneroComponent implements OnInit {
         data[idx].portada=this.bufferToBase64(data[idx]["imagen_principal"]["imgBase64"]);
       }
       this.artists=data;
-    });
 
+
+      console.log("extraxion de datos de artista por genero exitosa");
+      localStorage.setItem("artistgenere",JSON.stringify(data));
+    },(error) =>{ 
+      console.log(error.message);
+      console.log("error de conexion a artista por genero \nintento de usar el local storage");
+
+      if(localStorage.getItem('artistgenere')==null){
+        console.log('Local storage vacio')
+      }else{
+        this.artists=JSON.parse(localStorage.getItem('artistgenere'));
+        console.log('Local storage usado')
+      }
+
+    }
+    );
 
     this._Canartist.getCanArtistsBygenero(this.req)
     .subscribe((data)=>{
@@ -77,7 +92,23 @@ export class GeneroComponent implements OnInit {
         data[idx].portada_cancion=this.bufferToBase64(data[idx]["imagen_cancion"]["imgBase64"]);
       }
       this.canart=data;
-    });
+
+
+      console.log("extraxion de datos de canciones por genero exitosa");
+      localStorage.setItem("songgenere",JSON.stringify(data));
+    },(error) =>{ 
+      console.log(error.message);
+      console.log("error de conexion a canciones por genero \nintento de usar el local storage");
+
+      if(localStorage.getItem('songgenere')==null){
+        console.log('Local storage vacio')
+      }else{
+        this.canart=JSON.parse(localStorage.getItem('songgenere'));
+        console.log('Local storage usado')
+      }
+
+    }
+    );
   }
 
 

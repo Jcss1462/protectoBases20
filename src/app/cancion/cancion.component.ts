@@ -37,7 +37,24 @@ export class CancionComponent implements OnInit {
         data[idx].info=data[idx]["info"]["info"];
       }
       this.canci=data;
-    });
+
+
+      console.log("extraxion de datos de cancion exitosa");
+      localStorage.setItem("canci",JSON.stringify(data));
+    },(error) =>{ 
+      console.log(error.message);
+      console.log("error de conexion a cancion especifica\nintento de usar el local storage");
+
+      if(localStorage.getItem('canci')==null){
+        console.log('Local storage vacio')
+      }else{
+        this.canci=JSON.parse(localStorage.getItem('canci'));
+        console.log('Local storage usado')
+      }
+
+    }
+    );
+
   }
 
   
