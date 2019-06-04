@@ -29,7 +29,7 @@ export class ArtistaComponent implements OnInit {
   artists: Artist[];
   albart: Albart[];
 
-  private id: string;
+  id: string;
 
   constructor(private location: Location,private router: Router,private _Albart:AlbumesartistaService,private _Canartist:CancionesartistaService,private _Artistas:ArtistasService) {
     //sacar el parametro id y meterlo en un variable

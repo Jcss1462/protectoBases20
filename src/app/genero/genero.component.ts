@@ -25,7 +25,7 @@ import { CancionesartistaService } from '../services/api';
 })
 export class GeneroComponent implements OnInit {
 
-  private genero: string;
+  //private genero: string;
 
   canart: Canart[];
   artists: Artist[];
